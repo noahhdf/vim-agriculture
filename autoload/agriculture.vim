@@ -7,7 +7,7 @@ endfunction
 
 function! agriculture#trim_and_escape_register_a()
   let query = getreg('a')
-  let trimmedQuery = trim(query)
+  let trimmedQuery = xolox#misc#str#trim(query)
   let escapedQuery = escape(trimmedQuery, "'#%\\")
   call setreg('a', escapedQuery)
 endfunction
