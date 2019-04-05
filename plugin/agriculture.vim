@@ -8,8 +8,8 @@ nnoremap <Plug>RgRawSearch :RgRaw<Space>
 
 " Mappings to search visual selection
 vnoremap <Plug>AgRawVisualSelection "ay:call agriculture#trim_and_escape_register_a()<CR>:AgRaw -Q -- $'<C-r>a'
-vnoremap <Plug>RgRawVisualSelection "ay:call agriculture#trim_and_escape_register_a()<CR>:RgRaw -F -- $'<C-r>a'
+vnoremap <Plug>RgRawVisualSelection "ay:call agriculture#trim_and_escape_register_a()<CR>:RgRaw -F '<C-r>a' $(git rev-parse --show-toplevel)<CR>
 
 " Mappings to search word under cursor
 nnoremap <Plug>AgRawWordUnderCursor "ayiw:call agriculture#trim_and_escape_register_a()<CR>:AgRaw -Q -- $'<C-r>a'
-nnoremap <Plug>RgRawWordUnderCursor "ayiw:call agriculture#trim_and_escape_register_a()<CR>:RgRaw -F '<C-r>a'<CR>
+nnoremap <Plug>RgRawWordUnderCursor "ayiw:call agriculture#trim_and_escape_register_a()<CR>:RgRaw -F '<C-r>a' $(git rev-parse --show-toplevel)<CR>
